@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script>
+		// Solo permite ingresar numero.
+		function soloNumeros(e){
+			var key = window.event ? e.which : e.keycode;
+			var texto = document.getElementById("txt");
+			texto.innerHTML="key: " + event.which;
+			return(key >=48 && key <=57)
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txtCosto" name="txtCosto" value="" onkeypress="return soloNumeros(event)" />
+	<div id="txt"></div>
+
+</body>
+</html>

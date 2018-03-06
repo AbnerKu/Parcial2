@@ -1,0 +1,57 @@
+<!DOCTYPE html 5>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <style>
+        #map {
+            height: 100%;
+        }
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 2,
+                center: { lat: -33.865427, lng: 151.196123 },
+                mapTypeId: 'terrain'
+            });
+            script = document.createElement('script');
+            script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+            document.getElementsByTagName('head')[0].appendChild(script);
+            map.data.setStyle(function (feature) {
+                var magnitude = feature.getProperty('mag');
+                return {
+                    icon: getCircle(magnitude)
+                };
+            });
+        }
+
+        function getCircle(magnitude) {
+            return {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: 'red',
+                fillOpacity: .2,
+                scale: Math.pow(2, magnitude) / 2,
+                strokeColor: 'white',
+                strokeWeight: .5
+            };
+        }
+
+        function eqfeed_callback(results) {
+            map.data.addGeoJson(results);
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRu8zaq90APzhZSziApOA__Ja-BsXU_W4&callback=initMap">
+    </script>
+</body>
+
+</html>

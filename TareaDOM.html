@@ -1,0 +1,25 @@
+<!DOCTYPE html 5>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>DOM</title>
+	<script>
+		function reverso(){
+			var parrafos =document.getElementsByTagName("p");
+			for(var i=parrafos.length-1; i>=0; i){
+				console.log(parrafos[i]);
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Acceso directo a los nodos: </h1>
+	<h2>getElementByTagName</h2>
+	<p>De este modo se puede obtener el primer párrafo de la siguiente manera: </p>
+	<p>var pirmerParrafo [0]: </p>
+	<p>De la misma forma, se podrían  recorrer todos los párrafos de la pagina con el siguiente código: </p>
+	<p>for(var i =0; i <  parrafos.lengt;i++)</p>
+	<p>var parrafo = parrafos[i]</p>
+
+</body>
+</html>

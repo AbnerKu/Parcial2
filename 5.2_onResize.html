@@ -1,0 +1,14 @@
+    <html>
+    <head>
+    <script type="text/javascript">
+       function tamano(){
+          document.getElementById('ancho').style.display='block'
+          document.getElementById('ancho').innerHTML=window.innerWidth.toString();
+       }
+    </script>
+    </head>
+    <body onresize="tamano();">
+    <div id="ancho" style="display:none; position: fixed; top: 50px; padding: 2px 5px; border-radius: 3px; background: #666; color: #eee; box-shadow:3px 3px 3px #aaa; z-index:10;"></div>
+    </body>
+    </html>
+    

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script>
+        function limpiar(obj) {
+             var parrafo = document.getElementById("parrafo");
+            alert(parrafo.style.fontWeight);
+            parrafo.style.fontWeight = normal; 
+            
+        }
+       
+    </script>
+</head>
+<body onload="limpiar()">
+    <p id="parrafo" style="font-weight:bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti reiciendis dicta incidunt
+         maiores voluptatum sint esse veniam quidem,
+         maxime, ut dolore nobis quas et
+         labore accusamus corrupti sequi similique cum.</p>
+    
+</body>
+</html>
